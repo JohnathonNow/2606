@@ -1,0 +1,22 @@
+body {
+  background-image: linear-gradient(to right, rgb(0, 255, 255), rgb(25, 0, 255));
+}
+
+.linkRef {
+  background-image: linear-gradient(to right, lime, blue);
+  width: 1920px;
+  height: 100px;
+}
+
+a {
+  color: inherit;
+}
+
+.header {
+  clear: both;
+  display: inline-block;
+  font-family: Comic Sans MS;
+  font-size: 50pt;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
