@@ -95,6 +95,7 @@ changeBoxes();
 
 var fileNumber = 0;
 function save() {
+    window.plugins.toast.showShortBottom("SUBMIT!");
 console.log("clicked submit");
 
 var matchnum = document.getElementById("matchnum");
