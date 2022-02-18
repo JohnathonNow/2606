@@ -35,6 +35,7 @@ function doStuff(element) {
     input.name = id;
     input.id = id;
     input.classList.add("fieldday");
+    input.classList.add("reset-number")
     //and we put it on the page
     element.appendChild(input);
     //then we add a plus button the same way as the minus
