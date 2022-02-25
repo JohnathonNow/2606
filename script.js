@@ -35,7 +35,8 @@ function doStuff(element) {
     input.name = id;
     input.id = id;
     input.classList.add("fieldday");
-    input.classList.add("reset-number")
+    input.classList.add("reset-number");
+    input.classList.add("resetable");
     //and we put it on the page
     element.appendChild(input);
     //then we add a plus button the same way as the minus
@@ -66,6 +67,7 @@ function changeBoxes() {
         //and we run the doStuff function on that element
         doStuff(element);
     }
+  save_default_values();
 }
 
 function modify(element, x) {
@@ -96,10 +98,19 @@ changeBoxes();
 
 var fileNumber = 0;
 
-
+function save_default_values() {
+    var resetables = document.getElementsByClassName("resetable");
+    for (var i = 0; i < resetables.length; i++) {
+        //we get the ith thing from the resetables array
+        var element = resetables[i];
+        element.setAttribute("value-reset", element.value);
+    }
+}
 
 function save() {
+  if (window.plugins != undefined && window.plugins.toast != undefined) {
     window.plugins.toast.showShortBottom("SUBMIT!");
+  }
     console.log("clicked submit");
 
     var matchnum = document.getElementById("matchnum");
@@ -118,7 +129,7 @@ function save() {
     }
     var comments = document.getElementById("comments");
     console.log(comments.value)
-    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + comments.value;
+    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + ",\"" + (comments.value.replaceAll("\"", "\"\"")) + "\"";
     for (let i of checkboxes) {
         if (i.checked == true) {
             i = i.value;
@@ -132,12 +143,23 @@ function save() {
     fileNumber = fileNumber + 1;
     link.download = 'data' + fileNumber + '.csv';
     var blob = new Blob([string], {type: 'text/plain'});
-    write(link.download, blob);
+    if (window.plugins != undefined) {
+      write(link.download, blob);
+    }
     link.href = window.URL.createObjectURL(blob);
     link.click();
 
     var matchnum = document.getElementById("matchnum");
     matchnum.value = parseInt(matchnum.value) + 1;
+    var resetables = document.getElementsByClassName("resetable");
+    for (var i = 0; i < resetables.length; i++) {
+        //we get the ith thing from the resetables array
+        var element = resetables[i];
+        console.log(element.value + " , " + element.attributes["value-reset"].value)
+        element.value = element.attributes["value-reset"].value;
+    }
+  document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+  document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
 }
 
 

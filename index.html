@@ -22,7 +22,7 @@
     <br>
     <input value="" id="whoami" placeholder="Scouter Name"/>
     <br>
-    <input value="" id="teamnum" placeholder="Team #"/>
+    <input class="resetable" value="" id="teamnum" placeholder="Team #"/>
   </div>
   </div>
 
@@ -35,7 +35,7 @@
   <!-- TARMAC BUTTON -->
   <div class="centered-checkbox">
       <label for="tarmac" justify-content="center">Did the robot leave the tarmac?</label>
-    <input type="checkbox" class="bool reset-bool" id="tarmac" name="checkbox" value="tarmac"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="tarmac" name="checkbox" value="tarmac"/>
   </div>
 
   <!-- AUTON HUB COUNTERS -->
@@ -61,15 +61,15 @@
    <br> 
     <div class="right-checkbox"> <!-- FENDER  & LAUNCH PAD -->
       <label for="fender" justify-content="center">Fender(1)</label>
-      <input type="checkbox" class="bool" id="fender" name="checkbox" value="fender"/>
+      <input class="resetable" type="checkbox" class="bool" id="fender" name="checkbox" value="fender"/>
       <label for="launch_pad" justify-content="center">Launchpad(2)</label>
-      <input type="checkbox" class="bool" id="launch_pad" name="checkbox" value="launch pad"/>
+      <input class="resetable" type="checkbox" class="bool" id="launch_pad" name="checkbox" value="launch pad"/>
     </div>
     <div class="right-checkbox"> <!-- TERMINAL & MID-FIELD -->
       <label for="terminal" justify-content="center">Terminal(3)</label>
-      <input type="checkbox" class="bool" id="terminal" name="checkbox" value="terminal"/>
+      <input class="resetable" type="checkbox" class="bool" id="terminal" name="checkbox" value="terminal"/>
       <label for="mid_field" justify-content="center">Mid-field(4)</label>
-      <input type="checkbox" class="bool" id="mid_field" name="checkbox" value="mid_field"/>
+      <input class="resetable" type="checkbox" class="bool" id="mid_field" name="checkbox" value="mid_field"/>
     </div>
   </div>
   <!-- TELEOP DEFENSE??? -->
@@ -78,9 +78,9 @@
     <label for="endbutton" justify-content="left"><b>Did the robot...</b></label>
     <br>
     <label for="defense" justify-content="center">Play Defense </label>
-    <input type="checkbox" class="bool" id="defense" name="checkbox" value="tdefense"/>
+    <input class="resetable" type="checkbox" class="bool" id="defense" name="checkbox" value="tdefense"/>
     <label for="nodefense" justify-content="center">Get Defended </label>
-    <input type="checkbox" class="bool" id="nodefense" name="checkbox" value="tnodefense"/>
+    <input class="resetable" type="checkbox" class="bool" id="nodefense" name="checkbox" value="tnodefense"/>
         
   </div>
 
@@ -90,9 +90,9 @@
     <label for="endbutton" justify-content="center"><b>Where did the robot collect balls?</b></label>
     <br>
     <label for="hp" justify-content="center">Human Player</label> <!-- HUMAN PLAYER STATION? -->
-    <input type="checkbox" class="bool" id="hp" name="checkbox" value="hp"/>
+    <input class="resetable" type="checkbox" class="bool" id="hp" name="checkbox" value="hp"/>
     <label for="ground" justify-content="center">Ground</label> <!-- GROUND? -->
-    <input type="checkbox" class="bool" id="ground" name="checkbox" value="ground"/>
+    <input class="resetable" type="checkbox" class="bool" id="ground" name="checkbox" value="ground"/>
   </div>
 
 
@@ -106,11 +106,11 @@
   <br>
 
   <!-- CLIMBING BUTTONS -->
-  <input type="radio" class="endbutton" name="avengersendgame" value="Didn't Climb"> Didn't Climb</input> <br>
-  <input type="radio" class="endbutton" name="avengersendgame" value="Low Rung"> Low Rung</input> <br>
-  <input type="radio" class="endbutton" name="avengersendgame" value="Mid Rung"> Mid Rung</input> <br>
-  <input type="radio" class="endbutton" name="avengersendgame" value="High Rung"> High Rung</input> <br>
-  <input type="radio" class="endbutton" name="avengersendgame" value="Traversal Rung"> Traversal Rung</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Didn't Climb"> Didn't Climb</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Low Rung"> Low Rung</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Mid Rung"> Mid Rung</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="High Rung"> High Rung</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Traversal Rung"> Traversal Rung</input> <br>
 
   <!-- ENDGAME DEFENSE??? -->
   <div class="centered-checkbox"> <br> <b>Did the robot...</b></label> 
@@ -118,15 +118,15 @@
   </div>
   <div class = "right-checkbox">
     <label for="endgamedefense" justify-content="center">Play Defense </label>
-    <input type="checkbox" class="bool" id="endgamedefense" name="checkbox" value="edefense"/>
+    <input class="resetable" type="checkbox" class="bool" id="endgamedefense" name="checkbox" value="edefense"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
     <br>
     <label for="continuetoscore" justify-content="center">Continue scoring </label>
-    <input type="checkbox" class="bool" id="continuetoscore" name="checkbox" value="score"/>
+    <input class="resetable" type="checkbox" class="bool" id="continuetoscore" name="checkbox" value="score"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
     <br>
     <label for="botbroken" justify-content="center">Break/Not Show Up </label>
-    <input type="checkbox" class="bool" id="botbroken" name="checkbox" value="botbroken"/>
+    <input class="resetable" type="checkbox" class="bool" id="botbroken" name="checkbox" value="botbroken"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
     <br>
   </div>
@@ -146,7 +146,7 @@
     #phrase {
     width: inherit;
     }
-      rows="4" cols="40" name="comments" value="comments" id="comments" placeholder="Comments go here"></textarea>
+      rows="4" cols="40" name="comments" value="comments" id="comments"  class="resetable" placeholder="Comments go here"></textarea>
         <br>
     </center>
   </div>
