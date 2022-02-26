@@ -141,10 +141,11 @@ function save() {
 
     var link = document.createElement('a');
     fileNumber = fileNumber + 1;
-    link.download = 'data' + fileNumber + '.csv';
+    var k = 'data' + fileNumber + '.csv';
+    link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
     if (window.plugins != undefined) {
-      write(link.download, blob);
+      write(k, blob);
     }
     link.href = window.URL.createObjectURL(blob);
     link.click();
