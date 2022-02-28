@@ -122,6 +122,7 @@ function save() {
     var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
     var wholeradio = document.getElementsByName("avengersendgame")
     var checkboxes = document.getElementsByName("checkbox")
+    window.plugins.toast.showShortBottom("test1");
     for (let i of wholeradio) {
         if (i.checked) {
             var avengersendgame = i.value
@@ -138,10 +139,12 @@ function save() {
         }
         string += "," + i;
     }
-
+    window.plugins.toast.showShortBottom("test2");
     var link = document.createElement('a');
+    window.plugins.toast.showShortBottom("test3");
     fileNumber = fileNumber + 1;
     var k = 'data' + fileNumber + '.csv';
+    window.plugins.toast.showShortBottom("test4");
     link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
     //if (window.plugins != undefined) {
@@ -149,7 +152,7 @@ function save() {
     //}
     link.href = window.URL.createObjectURL(blob);
     link.click();
-
+    window.plugins.toast.showShortBottom("test5");
     var matchnum = document.getElementById("matchnum");
     matchnum.value = parseInt(matchnum.value) + 1;
     var resetables = document.getElementsByClassName("resetable");
