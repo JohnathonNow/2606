@@ -108,9 +108,9 @@ function save_default_values() {
 }
 
 function save() {
-  if (window.plugins != undefined && window.plugins.toast != undefined) {
-    window.plugins.toast.showShortBottom("SUBMIT!");
-  }
+  //if (window.plugins != undefined && window.plugins.toast != undefined) {
+    window.plugins.toast.showShortBottom("SUBMITTED WITH v22.02.27!");
+  //}
     console.log("clicked submit");
 
     var matchnum = document.getElementById("matchnum");
@@ -144,9 +144,9 @@ function save() {
     var k = 'data' + fileNumber + '.csv';
     link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
-    if (window.plugins != undefined) {
+    //if (window.plugins != undefined) {
       write(k, blob);
-    }
+    //}
     link.href = window.URL.createObjectURL(blob);
     link.click();
 
