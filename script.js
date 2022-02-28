@@ -120,9 +120,8 @@ function save() {
     var auton_lower_hub_count = document.getElementById("auton-lower-hub-count");
     var teleop_upper_hub_count = document.getElementById("teleop-upper-hub-count");
     var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
-    var wholeradio = document.getElementsByName("avengersendgame")
-    var checkboxes = document.getElementsByName("checkbox")
-    window.plugins.toast.showShortBottom("test1");
+    var wholeradio = document.getElementsByName("avengersendgame");
+    var checkboxes = document.getElementsByName("checkbox");
     for (let i of wholeradio) {
         if (i.checked) {
             var avengersendgame = i.value
