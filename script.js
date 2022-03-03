@@ -129,9 +129,7 @@ function save() {
     }
     var comments = document.getElementById("comments");
     console.log(comments.value)
-    window.plugins.toast.showShortBottom("teststevensonteststevenson")
     var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + ",\"" + (comments.value.replace(/\"/g, "\"\"")) + "\"";
-    window.plugins.toast.showShortBottom("this is how we finally narrow it down.")
     for (let i of checkboxes) {
         if (i.checked == true) {
             i = i.value;
@@ -140,12 +138,9 @@ function save() {
         }
         string += "," + i;
     }
-    window.plugins.toast.showShortBottom("test2222222222222");
     var link = document.createElement('a');
-    window.plugins.toast.showShortBottom("test333333333333333333333333333");
     fileNumber = fileNumber + 1;
     var k = 'data' + fileNumber + '.csv';
-    window.plugins.toast.showShortBottom("test44444444444444444444444444444444444444444444444444");
     link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
     //if (window.plugins != undefined) {
@@ -153,7 +148,6 @@ function save() {
     //}
     link.href = window.URL.createObjectURL(blob);
     link.click();
-    window.plugins.toast.showShortBottom("test55555555555555555555555555555555555555555555555555555555555555555555555555");
     var matchnum = document.getElementById("matchnum");
     matchnum.value = parseInt(matchnum.value) + 1;
     var resetables = document.getElementsByClassName("resetable");
