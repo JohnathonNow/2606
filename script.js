@@ -109,32 +109,39 @@ function save_default_values() {
 
 function save() {
   //if (window.plugins != undefined && window.plugins.toast != undefined) {
-    window.plugins.toast.showShortBottom("SUBMITTED WITH v22.02.27!");
+    window.plugins.toast.showShortBottom("SUBMITTED WITH v22.03.08!");
   //}
     console.log("clicked submit");
 
     var matchnum = document.getElementById("matchnum");
+    var tablet = document.getElementById("tablet");
     var whoami = document.getElementById("whoami");
     var teamnum = document.getElementById("teamnum");
     var auton_upper_hub_count = document.getElementById("auton-upper-hub-count");
     var auton_lower_hub_count = document.getElementById("auton-lower-hub-count");
     var teleop_upper_hub_count = document.getElementById("teleop-upper-hub-count");
     var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
-    var wholeradio = document.getElementsByName("avengersendgame");
+    var wholeradio1 = document.getElementsByName("avengersendgame");
+    var wholeradio2 = document.getElementsByName("outcome");
     var checkboxes = document.getElementsByName("checkbox");
-    for (let i of wholeradio) {
+    for (let i of wholeradio1) {
         if (i.checked) {
             var avengersendgame = i.value
         }
     }
+    for (let i of wholeradio2) {
+        if (i.checked) {
+            var outcome = i.value
+        }
+    }
     var comments = document.getElementById("comments");
     console.log(comments.value)
-    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + ",\"" + (comments.value.replace(/\"/g, "\"\"")) + "\"";
+    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"")) + "\"";
     for (let i of checkboxes) {
         if (i.checked == true) {
-            i = i.value;
+            i = 1;
         } else {
-            i = "NO " + i.value;
+            i = 0;
         }
         string += "," + i;
     }

@@ -20,6 +20,8 @@
   <div class = "float-child">
     <input value="" id="matchnum" placeholder="Match #"/>
     <br>
+    <input value="" id="tablet" placeholder="Tablet"/>
+    <br>
     <input value="" id="whoami" placeholder="Scouter Name"/>
     <br>
     <input class="resetable" value="" id="teamnum" placeholder="Team #"/>
@@ -61,15 +63,15 @@
    <br> 
     <div class="right-checkbox"> <!-- FENDER  & LAUNCH PAD -->
       <label for="fender" justify-content="center">Fender(1)</label>
-      <input class="resetable" type="checkbox" class="bool" id="fender" name="checkbox" value="fender"/>
+      <input type="checkbox" class="bool reset-bool resetable" id="fender" name="checkbox" value="fender"/>
       <label for="launch_pad" justify-content="center">Launchpad(2)</label>
-      <input class="resetable" type="checkbox" class="bool" id="launch_pad" name="checkbox" value="launch pad"/>
+      <input type="checkbox" class="bool reset-bool resetable" id="launch_pad" name="checkbox" value="launch pad"/>
     </div>
     <div class="right-checkbox"> <!-- TERMINAL & MID-FIELD -->
       <label for="terminal" justify-content="center">Terminal(3)</label>
-      <input class="resetable" type="checkbox" class="bool" id="terminal" name="checkbox" value="terminal"/>
+      <input type="checkbox" class="bool reset-bool resetable" id="terminal" name="checkbox" value="terminal"/>
       <label for="mid_field" justify-content="center">Mid-field(4)</label>
-      <input class="resetable" type="checkbox" class="bool" id="mid_field" name="checkbox" value="mid_field"/>
+      <input type="checkbox" class="bool reset-bool resetable" id="mid_field" name="checkbox" value="mid_field"/>
     </div>
   </div>
   <!-- TELEOP DEFENSE??? -->
@@ -78,9 +80,9 @@
     <label for="endbutton" justify-content="left"><b>Did the robot...</b></label>
     <br>
     <label for="defense" justify-content="center">Play Defense </label>
-    <input class="resetable" type="checkbox" class="bool" id="defense" name="checkbox" value="tdefense"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="defense" name="checkbox" value="tdefense"/>
     <label for="nodefense" justify-content="center">Get Defended </label>
-    <input class="resetable" type="checkbox" class="bool" id="nodefense" name="checkbox" value="tnodefense"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="nodefense" name="checkbox" value="tnodefense"/>
         
   </div>
 
@@ -90,9 +92,11 @@
     <label for="endbutton" justify-content="center"><b>Where did the robot collect balls?</b></label>
     <br>
     <label for="hp" justify-content="center">Human Player</label> <!-- HUMAN PLAYER STATION? -->
-    <input class="resetable" type="checkbox" class="bool" id="hp" name="checkbox" value="hp"/>
-    <label for="ground" justify-content="center">Ground</label> <!-- GROUND? -->
-    <input class="resetable" type="checkbox" class="bool" id="ground" name="checkbox" value="ground"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="hp" name="checkbox" value="hp"/>
+    <label for="groundsame" justify-content="center">Ground - Alliance Side</label> <!-- GROUND? -->
+    <input type="checkbox" class="bool reset-bool resetable" id="groundsame" name="checkbox" value="groundsame"/>
+    <label for="groundaway" justify-content="center">Ground - Opposing Side</label> <!-- GROUND? -->
+    <input type="checkbox" class="bool reset-bool resetable" id="groundaway" name="checkbox" value="groundaway"/>
   </div>
 
 
@@ -107,6 +111,7 @@
 
   <!-- CLIMBING BUTTONS -->
   <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Didn't Climb"> Didn't Climb</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Attempted or Failed"> Attempted or Failed</input> <br>
   <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Low Rung"> Low Rung</input> <br>
   <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="Mid Rung"> Mid Rung</input> <br>
   <input class="resetable" type="radio" class="endbutton" name="avengersendgame" value="High Rung"> High Rung</input> <br>
@@ -118,19 +123,27 @@
   </div>
   <div class = "right-checkbox">
     <label for="endgamedefense" justify-content="center">Play Defense </label>
-    <input class="resetable" type="checkbox" class="bool" id="endgamedefense" name="checkbox" value="edefense"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="endgamedefense" name="checkbox" value="edefense"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
     <br>
     <label for="continuetoscore" justify-content="center">Continue scoring </label>
-    <input class="resetable" type="checkbox" class="bool" id="continuetoscore" name="checkbox" value="score"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="continuetoscore" name="checkbox" value="score"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
     <br>
     <label for="botbroken" justify-content="center">Break/Not Show Up </label>
-    <input class="resetable" type="checkbox" class="bool" id="botbroken" name="checkbox" value="botbroken"/>
+    <input type="checkbox" class="bool reset-bool resetable" id="botbroken" name="checkbox" value="botbroken"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
     <br>
   </div>
 
+<br>
+<label for="winlose" justify-content="center" ><b>Did the robot win, lose, or tie?</b></label>
+<br>
+
+  <!-- Win/Lose Buttons -->
+  <input class="resetable" type="radio" class="endbutton" name="outcome" value="Win"> Win</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="outcome" value="Lose"> Lose</input> <br>
+  <input class="resetable" type="radio" class="endbutton" name="outcome" value="Tie"> Tie</input> <br>
 
   <!-- AMY'S COMMENT BOX -->
   <div>
