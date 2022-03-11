@@ -109,7 +109,7 @@ function save_default_values() {
 
 function save() {
   //if (window.plugins != undefined && window.plugins.toast != undefined) {
-    window.plugins.toast.showShortBottom("SUBMITTED WITH v22.03.08!");
+   
   //}
     console.log("clicked submit");
 
@@ -136,7 +136,7 @@ function save() {
     }
     var comments = document.getElementById("comments");
     console.log(comments.value)
-    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"")) + "\"";
+    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"").replace(/,/g, ";").replace(/\n/g, ";;  ")) + "\"";
     for (let i of checkboxes) {
         if (i.checked == true) {
             i = 1;
@@ -151,7 +151,6 @@ function save() {
     link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
     //if (window.plugins != undefined) {
-      write(k, blob);
     //}
     link.href = window.URL.createObjectURL(blob);
     link.click();
@@ -166,6 +165,8 @@ function save() {
     }
   document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
   document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
+  write(k, blob);
+  window.plugins.toast.showShortBottom("SUBMITTED WITH v22.03.10!");
 }
 
 

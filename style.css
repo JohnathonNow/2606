@@ -5,6 +5,8 @@ body {
   background-color: rgb(244, 244, 244);
 }
 
+html, body {margin: 0; height: 100%; overflow-x: hidden}
+
 div#bob {
   background-color: blue;
 }
@@ -82,8 +84,8 @@ h2 {
 }
 
 .endbutton {
-  width:1.4em;
-  height:1.4em;
+  width:30px;
+  height:30px;
   vertical-align: bottom;
 }
 
