@@ -136,7 +136,7 @@ function save() {
     }
     var comments = document.getElementById("comments");
     console.log(comments.value)
-    var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"").replace(/,/g, ";").replace(/\n/g, ";;  ")) + "\"";
+    var string = "" + matchnum.value + "," + tablet.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"").replace(/,/g, ";").replace(/\n/g, ";;  ")) + "\"";
     for (let i of checkboxes) {
         if (i.checked == true) {
             i = 1;
