@@ -147,7 +147,7 @@ function save() {
     }
     var link = document.createElement('a');
     fileNumber = fileNumber + 1;
-    var k = tablet + 'data' + fileNumber + '.csv';
+    var k = tablet.value + 'data' + fileNumber + '.csv';
     link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
     //if (window.plugins != undefined) {
