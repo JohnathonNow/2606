@@ -75,7 +75,7 @@ function modify(element, x) {
     var inputBox = document.getElementById(element);
     //we then take the current value of that element
     //(what is written in the text box)
-    //and turn it into a number -before it was text,
+    //and turn it into a number - before it was text,
     //(the number 3 is different from the text "3")
     //then we add x to that number, and set the value
     //of the textbox to the result
@@ -147,7 +147,7 @@ function save() {
     }
     var link = document.createElement('a');
     fileNumber = fileNumber + 1;
-    var k = tablet.value + 'data' + fileNumber + '.csv';
+    var k = 'data' + fileNumber + '.csv';
     link.download = k;
     var blob = new Blob([string], {type: 'text/plain'});
     //if (window.plugins != undefined) {
