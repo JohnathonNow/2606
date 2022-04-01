@@ -110,4 +110,7 @@ h2 {
     padding: 20px;
 }
 
-textarea { word-break: break-all; }
+textarea { word-break: break-all;
+        font: 10pt arial, helvetica, sans-serif;
+        padding: 5px;
+    }
