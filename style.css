@@ -109,3 +109,5 @@ h2 {
     float: left;
     padding: 20px;
 }
+
+textarea { word-break: break-all; }
