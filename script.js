@@ -158,82 +158,73 @@ changeBoxes();
 
 var fileNumber = 0;
 
+function save_default_values() {
+    var resetables = document.getElementsByClassName("resetable");
+    for (var i = 0; i < resetables.length; i++) {
+        //we get the ith thing from the resetables array
+        var element = resetables[i];
+        element.setAttribute("value-reset", element.value);
+    }
+}
+
 function save() {
-  if (window.plugins) {
-    window.plugins.toast.showShortBottom("SUBMIT!");
-  }
-  console.log("clicked submit");
+  //if (window.plugins != undefined && window.plugins.toast != undefined) {
+   
+  //}
+    console.log("clicked submit");
 
-  var matchnum = document.getElementById("matchnum");
-  var whoami = document.getElementById("whoami");
-  var teamnum = document.getElementById("teamnum");
-  var auton_upper_hub_count = document.getElementById("auton-upper-hub-count");
-  var auton_lower_hub_count = document.getElementById("auton-lower-hub-count");
-  var teleop_upper_hub_count = document.getElementById("teleop-upper-hub-count");
-  var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
-  var wholeradio = document.getElementsByName("avengersendgame")
-  var checkboxes = document.getElementsByName("checkbox")
-  for (let i of wholeradio) {
-    if (i.checked) {
-      var avengersendgame = i.value
+    var matchnum = document.getElementById("matchnum");
+    var tablet = document.getElementById("tablet");
+    var whoami = document.getElementById("whoami");
+    var teamnum = document.getElementById("teamnum");
+    var auton_upper_hub_count = document.getElementById("auton-upper-hub-count");
+    var auton_lower_hub_count = document.getElementById("auton-lower-hub-count");
+    var teleop_upper_hub_count = document.getElementById("teleop-upper-hub-count");
+    var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
+    var wholeradio1 = document.getElementsByName("avengersendgame");
+    var wholeradio2 = document.getElementsByName("outcome");
+    var checkboxes = document.getElementsByName("checkbox");
+    for (let i of wholeradio1) {
+        if (i.checked) {
+            var avengersendgame = i.value
+        }
     }
-  }
-  var comments = document.getElementById("comments");
-  console.log(comments.value)
-  var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + comments.value;
-  for (let i of checkboxes) {
-    if (i.checked == true) {
-      i = i.value;
-    } else {
-      i = "NO " + i.value;
+    for (let i of wholeradio2) {
+        if (i.checked) {
+            var outcome = i.value
+        }
     }
-    string += "," + i;
-  }
-
-  var link = document.createElement('a');
-  fileNumber = fileNumber + 1;
-  link.download = 'data' + fileNumber + '.csv';
-  var blob = new Blob([string], { type: 'text/plain' });
-  write(link.download, blob);
-  link.href = window.URL.createObjectURL(blob);
-  link.click();
-
-  var matchnum = document.getElementById("matchnum");
-  matchnum.value = parseInt(matchnum.value) + 1;
+    var comments = document.getElementById("comments");
+    console.log(comments.value)
+    var string = "" + matchnum.value + "," + tablet.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"").replace(/,/g, ";").replace(/\n/g, ";;  ")) + "\"";
+    for (let i of checkboxes) {
+        if (i.checked == true) {
+            i = 1;
+        } else {
+            i = 0;
+        }
+        string += "," + i;
+    }
+    var link = document.createElement('a');
+    fileNumber = fileNumber + 1;
+    var k = tablet.value + 'data' + fileNumber + '.csv';
+    link.download = k;
+    var blob = new Blob([string], {type: 'text/plain'});
+    //if (window.plugins != undefined) {
+    //}
+    link.href = window.URL.createObjectURL(blob);
+    link.click();
+    var matchnum = document.getElementById("matchnum");
+    matchnum.value = parseInt(matchnum.value) + 1;
+    var resetables = document.getElementsByClassName("resetable");
+    for (var i = 0; i < resetables.length; i++) {
+        //we get the ith thing from the resetables array
+        var element = resetables[i];
+        console.log(element.value + " , " + element.attributes["value-reset"].value)
+        element.value = element.attributes["value-reset"].value;
+    }
+  document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+  document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
+  write(k, blob);
+  window.plugins.toast.showShortBottom("SUBMITTED WITH v22.03.10!");
 }
-
-/* var matchnum = document.getElementById("matchnum");
-var whoami = document.getElementById("whoami");
-var teamnum = document.getElementById("teamnum");
-var tarmac = document.getElementById("tarmac");
-var auton_upper_hub_count = document.getElementById("auton-upper-hub-count");
-var auton_lower_hub_count = document.getElementById("auton-lower-hub-count");
-var teleop_upper_hub_count = document.getElementById("teleop-upper-hub-count");
-var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
-var fender = document.getElementById("fender");
-var launch_pad = document.getElementById("launch pad");
-var terminal = document.getElementById("terminal");
-var mid_field = document.getElementById("mid-field");
-var defense = document.getElementById("defense");
-var nodefense = document.getElementById("nodefense");
-var hp = document.getElementById("hp");
-var ground = document.getElementById("ground");
-var wholeradio = document.getElementsByName("avengersendgame")
-var checkboxes = document.getElementsByName("checkbox")
-var endgamedefense = document.getElementById("endgamedefense");
-var continuetoscore = document.getElementById("continuetoscore");
-var comments = document.getElementById("comments");
-for (let i of wholeradio) {
-  if (i.checked) {
-    var avengersendgame = i.value
-  }
-}
-for (let i of checkboxes) {
-  if (i.checked == true) {
-    i = i.value;
-  } else {
-    i = "NO";
-  }
-}
-
-var string = "" + matchnum.value + "," + whoami.value + "," + teamnum.value + "," + tarmac.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + fender.value + "," + terminal.value + ","  + launch_pad.value + ","+ mid_field.value + "," + defense.value + "," + nodefense.value + "," + hp.value + "," + ground.value + "," + avengersendgame + "," + endgamedefense.value + "," + continuetoscore.value + "," + comments.value;*/
