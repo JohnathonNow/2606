@@ -22,7 +22,9 @@ div#bob {
   width: 32px;
 }
 
-.btn {
+.btn_increment {
+  background-color: black;
+  color: lightgray;
   width: 100px;
   height: 100px;
   font-family: Consolas, monospace; 
@@ -30,6 +32,35 @@ div#bob {
   text-align: center;
   vertical-align: middle;
   display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_toggle {
+  font-family: Consolas, monospace; 
+  font-size: 36pt;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_toggle[data-value="true"] {
+  background-color: yellow;
+}
+.btn_toggle[data-value="false"] {
+  background-color: gray;
+}
+.toggle {
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  text-align: center;
+  vertical-align: middle;
   justify-content: center;
   align-items: center;
 }
@@ -110,7 +141,20 @@ h2 {
     padding: 20px;
 }
 
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 textarea { word-break: break-all;
-        font: 10pt arial, helvetica, sans-serif;
-        padding: 5px;
-    }
+   font: 10pt arial, helvetica, sans-serif;
+   padding: 5px;
+ }

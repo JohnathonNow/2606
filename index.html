@@ -7,12 +7,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="bootstrap.css" rel="stylesheet"  type="text/css" />
+  <link href="bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" type="text/css" />
-   <script src="cordova.js"></script>
+  <script src="cordova.js"></script>
+
 </head>
 
 <body>
+
   <div class= "float-container">
   <div class = "float-child">
     <img src = "robovikings.jpg" height = "160"/> <!-- its our LOGO!II!1!!11lll! -->
@@ -28,12 +30,11 @@
     <input class="resetable" value="" id="teamnum" placeholder="Team #"/>
   </div>
   </div>
-
   <!-- AUTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOoOOOOOOOOOOOOOOOOOOOOOOOoOOONNNNNNNNNNN -->
   <div class="period-name">
     <h1>AUTONOMOUS</h1>
   </div>
-  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);"/>
+  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);" />
 
   <!-- TARMAC BUTTON -->
   <div class="centered-checkbox">
@@ -41,21 +42,47 @@
     <input type="checkbox" class="bool reset-bool resetable" id="tarmac" name="checkbox" value="tarmac"/>
   </div>
 
-  <!-- AUTON HUB COUNTERS -->
-  <div class="incremental" data-value="0" data-id="auton-upper-hub-count" data-label="<b>UPPER HUB COUNT</b>" data-min="0" data-max="100"></div>
-  <div class="incremental" data-value="0" data-id="auton-lower-hub-count" data-label="<b>LOWER HUB COUNT</b>" data-min="0" data-max="100"></div> <br>
+  <div class="toggle" data-id="gamepiece-type" data-label="Cone"></div>
 
+  <!-- AUTON HUB COUNTERS -->
+  <div class="incremental" data-value="0" data-id="auton-upper-hub-count" data-label="<b>UPPER HUB COUNT</b>"
+    data-min="0" data-max="100"></div>
+  <div class="incremental" data-value="0" data-id="auton-lower-hub-count" data-label="<b>LOWER HUB COUNT</b>"
+    data-min="0" data-max="100"></div> <br>
+
+
+  <div class="slider" data-id="defense" data-label="<b>DEFENSE</b>" data-min="1" data-max="3"></div>
+  <br>
 
 
   <!-- TELLEEEEOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOPPPPPPPPPPPPPPPPPPP -->
   <div class="period-name">
     <h1>TELEOP</h1>
   </div>
-  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);"/>
+  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);" />
 
+
+  <div class="row">
+    <div class="column">
+      <div class="incremental" data-value="0" data-id="teleop-upper-hub-count" data-label="<b>UPPER HUB COUNT</b>"
+        data-min="0" data-max="100"></div>
+      <div class="slider" data-id="defense2" data-label="<b>DEFENSE 2</b>" data-min="1" data-max="3"></div>
+      <br>
+
+    </div>
+
+    <div class="column">
+      <div class="incremental" data-value="0" data-id="teleop-lower-hub-count" data-label="<b>LOWER HUB COUNT</b>"
+        data-min="0" data-max="100"></div>
+      <!-- This toggle will default to on -->
+      <div class="toggle" data-value="true" data-id="gamepiece-type2" data-label="Default on"></div>
+
+    </div>
+
+  </div>
   <!-- TELEOP HUB COUNTER -->
-  <div class="incremental" data-value="0" data-id="teleop-upper-hub-count" data-label="<b>UPPER HUB COUNT</b>" data-min="0" data-max="100"></div>
-  <div class="incremental" data-value="0" data-id="teleop-lower-hub-count" data-label="<b>LOWER HUB COUNT</b>" data-min="0" data-max="100"></div>
+
+
   <br>
 
   <!-- WHERE IS THE ROBOT SHOOTING FROM????? -->
@@ -76,15 +103,16 @@
     </div>
   </div>
   <!-- TELEOP DEFENSE??? -->
-    <div class="centered-checkbox">
+  <div class="centered-checkbox">
     <br>
     <label for="endbutton" justify-content="left"><b>Did the robot...</b></label>
     <br>
     <label for="defense" justify-content="center">Play Defense </label>
+
     <input type="checkbox" class="bool reset-bool resetable" id="defense" name="checkbox" value="tdefense"/>
     <label for="nodefense" justify-content="center">Get Defended </label>
     <input type="checkbox" class="bool reset-bool resetable" id="nodefense" name="checkbox" value="tnodefense"/>
-        
+
   </div>
 
   <!-- WHERE THEY GET BALLS??? -->
@@ -94,6 +122,7 @@
     <h4>Only put where a robot significantly picks up from. Making one venture to the other side for one ball should not count for G-OS since it didn't significantly pick up from that side.</h4>
     <br>
     <label for="hp" justify-content="center">Human Player</label> <!-- HUMAN PLAYER STATION? -->
+
     <input type="checkbox" class="bool reset-bool resetable" id="hp" name="checkbox" value="hp"/>
     <label for="groundsame" justify-content="center">Ground - Alliance Side</label> <!-- GROUND? -->
     <input type="checkbox" class="bool reset-bool resetable" id="groundsame" name="checkbox" value="groundsame"/>
@@ -107,8 +136,8 @@
     <br>
     <h1>Endgame</h1>
   </div>
-  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);"/>
-  <label for="endbutton" justify-content="center" ><b>Where did the Robot finish in ENDGAME?</b></label>
+  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);" />
+  <label for="endbutton" justify-content="center"><b>Where did the Robot finish in ENDGAME?</b></label>
   <br>
 
   <!-- CLIMBING BUTTONS -->
@@ -120,10 +149,10 @@
   <input class="resetable endbutton" type="radio" name="avengersendgame" value="Traversal Rung"> Traversal Rung</input> <br>
 
   <!-- ENDGAME DEFENSE??? -->
-  <div class="centered-checkbox"> <br> <b>Did the robot...</b></label> 
+  <div class="centered-checkbox"> <br> <b>Did the robot...</b></label>
     <br>
   </div>
-  <div class = "right-checkbox">
+  <div class="right-checkbox">
     <label for="endgamedefense" justify-content="center">Play Defense </label>
     <input type="checkbox" class="bool reset-bool resetable" id="endgamedefense" name="checkbox" value="edefense"/>
     <label style = "color:rgb(244, 244, 244); font-size:20pt" for = "nothing"> <b> hhhhhhh </b> </label>
@@ -155,11 +184,12 @@
     </center>
   </div>
   <!-- SUBMIT BUTTON -->
-  <div class="btn-primary" onclick="save()" align="center">Submit</div> 
+  <div class="btn-primary" onclick="save()" align="center">Submit</div>
   <script src="filewriting.js"></script>
   <script src="script.js"></script>
-      
+
   <!-- RAPID REACT LOGO -->
-    <img src= "rapidreact_logo.png" width="10000000" height="100" class="center"/>
+  <img src="rapidreact_logo.png" width="10000000" height="100" class="center" />
 </body>
+
 </html>
