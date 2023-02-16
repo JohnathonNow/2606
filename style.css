@@ -50,7 +50,7 @@ div.bob {
 
 .big-toggle > .btn_toggle {
   font-family: Consolas, monospace; 
-  font-size: 24pt;
+  font-size: 23pt;
   width: 250px;
   height: 66px;
   background: rgba(255, 255, 255, 0.09);
@@ -79,6 +79,10 @@ div.bob {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+}
+
+.sliderelement {
+  width: 500px;
 }
 
 .fieldday {
