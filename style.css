@@ -216,6 +216,7 @@ textarea { word-break: break-all;
   float: left;
   padding: 0%;
   width: 300px;
+  padding: 10px;
   height: 350px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 15px;
@@ -223,7 +224,7 @@ textarea { word-break: break-all;
 
 .box_2 {
   float: center;
-  width: 302px;
+  width: 270px;
   height: 120px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 30px;
