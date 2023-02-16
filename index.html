@@ -13,180 +13,248 @@
 </head>
 
 <body>
-
-  <div class="float-container">
-    <div class="float-child">
-      <img src="robovikings.jpg" height="160" /> <!-- its our LOGO!II!1!!11lll! -->
-      <br>
+  <div class="big-float-container">
+    <div class="float-container">
+      <div class="float-child">
+        <img src="robovikings.png" style="length: auto"/> <!-- its our LOGO!II!1!!11lll! -->
+        <br>
+      </div>
+      <div class="box_9">
+        <input type="text" id="Name" size="50" placeholder="Name"
+          style="background-color: transparent; color:#ffffff; border-color: transparent;">
+        <br>
+        <input type="text" id="Match" size="50" placeholder="Match #"
+          style="background-color: transparent; color:#ffffff; border-color: transparent;">
+        <br>
+        <input type="text" id="Team" size="50" placeholder="Team #"
+          style="background-color: transparent; color:#ffffff; border-color: transparent;">
+        <br>
+        <input type="text" id="Tablet" size="50" placeholder="Tablet #"
+          style="background-color: transparent; color:#ffffff; border-color: transparent;">
+        </font>
+      </div>
     </div>
-    <div class="float-child">
-      <input value="" id="matchnum" placeholder="Match #" />
-      <br>
-      <input value="" id="tablet" placeholder="Tablet" />
-      <br>
-      <input value="" id="whoami" placeholder="Scouter Name" />
-      <br>
-      <input class="resetable" value="" id="teamnum" placeholder="Team #" />
+  </div>
+  <br>
+  <div class="box_7">
+    <div class="period-name">
+      <h1>AUTONOMOUS</h1>
+      <hr style="height: 5px;width: 600px;margin: auto;background-color: #ffffff;" />
     </div>
   </div>
-  <div class="period-name">
-    <h1>AUTONOMOUS</h1>
+  <br>
+  <div class="big-float-container">
+    <!-- TARMAC BUTTON -->
+    <div class="box_1">
+      <div class="box_2 center">
+        <h4>Did the robot leave the community?</h4>
+      </div>
+      <br>
+      <div class="centered-checkbox">
+        <input type="checkbox" class="bool reset-bool resetable" id="tarmac" name="checkbox" value="tarmac" />
+      </div>
+    </div>
+
+    <div class="box_4">
+      <div class="box_2 center">
+        <h4>Did they pick up cubes or cones?</h4>
+      </div>
+      <br>
+      <div class="toggle" data-id="gamepiece-type" data-label="Cone"> </div>
+      <div class="toggle big" data-id="gamepiece-type3" data-label="Cube" style="--data-color-on: purple;"> </div>
+    </div>
   </div>
-  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);" />
-
-  <!-- TARMAC BUTTON -->
-  <div class="centered-checkbox">
-    <label for="tarmac" justify-content="center">Did the robot leave the tarmac?</label>
-    <input type="checkbox" class="bool reset-bool resetable" id="tarmac" name="checkbox" value="tarmac" />
-  </div>
-
-  <div class="toggle" data-id="gamepiece-type" data-label="Cone"></div>
-
+  <br>
   <!-- AUTON HUB COUNTERS -->
-  <div class="incremental" data-value="0" data-id="auton-upper-hub-count" data-label="<b>UPPER HUB COUNT</b>"
-    data-min="0" data-max="100"></div>
-  <div class="incremental" data-value="0" data-id="auton-lower-hub-count" data-label="<b>LOWER HUB COUNT</b>"
-    data-min="0" data-max="100"></div> <br>
+  <div class="box_3">
+    <br>
+    <img src="nodes.png" width="100%" height="310" ; />
+    <!-- its our NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOODDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEESSSSSSSSSSSS -->
+    <br>
 
+    <div class="row">
+      <div class="center" style="font-size: 24px" ;>
+        <div class="incremental" data-value="0" data-id="auton-upper-node-count" data-label="<b>UPPER NODES</b>"
+          data-min="-99" data-max="100"></div>
 
-  <div class="slider" data-id="defense" data-label="<b>DEFENSE</b>" data-min="1" data-max="3"></div>
+      </div>
+
+      <div class="center" style="font-size: 24px" ;>
+        <div class="incremental" data-value="0" data-id="auton-middle-node-count" data-label="<b>MIDDLE NODES</b>"
+          data-min="-99" data-max="100"></div>
+
+      </div>
+
+      <div class="center" style="font-size: 24px" ;>
+        <div class="incremental" data-value="0" data-id="auton-lower-node-count" data-label="<b>LOWER NODES</b>"
+          data-min="-99" data-max="100"></div>
+      </div>
+    </div>
+  </div>
+
   <br>
 
+  <div class="box_5">
+    <div class="box_6 center">
+      <h4>Did the robot ...?</h4>
+    </div>
+    <div class="row">
+      <div class="center">
+        <div class="toggle" data-id="dock" data-label="Dock" style="--data-color-on: blue;"> </div>
+      </div>
+      <div class="center">
+        <div class="toggle" data-id="engage" data-label="Engage" style="--data-color-on: green;"> </div>
+      </div>
+      <div class="center">
+        <div class="toggle" data-id="neither" data-label="Neither" style="--data-color-on: red;"> </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
 
   <!-- TELLEEEEOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOPPPPPPPPPPPPPPPPPPP -->
-  <div class="period-name">
-    <h1>TELEOP</h1>
-  </div>
-  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);" />
-
-
-  <div class="row">
-    <div class="column">
-      <div class="incremental" data-value="0" data-id="teleop-upper-hub-count" data-label="<b>UPPER HUB COUNT</b>"
-        data-min="0" data-max="100"></div>
-      <div class="slider" data-id="defense2" data-label="<b>DEFENSE 2</b>" data-min="1" data-max="3"></div>
-      <br>
-
+  <div class="box_7">
+    <div class="period-name">
+      <h1>TELEOP</h1>
     </div>
-
-    <div class="column">
-      <div class="incremental" data-value="0" data-id="teleop-lower-hub-count" data-label="<b>LOWER HUB COUNT</b>"
-        data-min="0" data-max="100"></div>
-      <!-- This toggle will default to on -->
-      <div class="toggle" data-value="true" data-id="gamepiece-type2" data-label="Default on"></div>
-
-    </div>
-
+    <hr style="height: 5px;width: 600px;margin: auto;background-color: white;" />
   </div>
+  <br>
+
+
+  <!-- TELOP HUB COUNTERS -->
+  <!-- AUTON HUB COUNTERS -->
+  <div class="box_3">
+    <br>
+    <img src="nodes.png" width="100%" height="310" ; />
+    <!-- its our NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOODDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEESSSSSSSSSSSS -->
+    <br>
+
+    <div class="row">
+      <div class="center" style="font-size: 24px" ;>
+        <div class="incremental" data-value="0" data-id="telop-upper-node-count" data-label="<b>UPPER NODES</b>"
+          data-min="-99" data-max="100"></div>
+
+      </div>
+
+      <div class="center" style="font-size: 24px" ;>
+        <div class="incremental" data-value="0" data-id="telop-middle-node-count" data-label="<b>MIDDLE NODES</b>"
+          data-min="-99" data-max="100"></div>
+
+      </div>
+
+      <div class="center" style="font-size: 24px" ;>
+        <div class="incremental" data-value="0" data-id="telop-lower-node-count" data-label="<b>LOWER NODES</b>"
+          data-min="-99" data-max="100"></div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
   <!-- TELEOP HUB COUNTER -->
 
+  <div class="big-float-container">
+    <div class="box_1">
+      <div class="box_2 center">
+        <h4>Did they pick up cubes or cones?</h4>
+      </div>
+      <br>
+      <div class="toggle" data-id="gamepiece-type4" data-label="Cone"> </div>
+      <div class="toggle" data-id="gamepiece-type5" data-label="Cube" style="--data-color-on: purple;"> </div>
+    </div>
+
+    <div class="box_4">
+      <div class="box_2 center">
+        <h4>How many fouls did they have?</h4>
+      </div>
+      <div class="incremental" data-value="0" data-id="foul-count" data-label="<b></b>" data-min="0" data-max="100">
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="box_5">
+    <div class="box_8 center">
+      <h6>During the match did they?</h6>
+    </div>
+    <div class="row">
+      <div class="center">
+        <div class="toggle big-toggle" data-id="yesdefense" data-label="Play Defense" style="--data-color-on: blue;">
+        </div>
+      </div>
+      <div class="center">
+        <div class="toggle big-toggle" data-id="nodefense" data-label="Get Defended" style="--data-color-on: red;">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <br>
 
-  <!-- WHERE IS THE ROBOT SHOOTING FROM????? -->
-  <h2>
-    <center>Where is the robot shooting from?</center>
-  </h2>
-  <p style="text-align:center;"><img src="Field(edited).png" width="600" height="400" /></p>
+  <div class="box_5">
+    <div class="box_8 center">
+      <h5>How Good was their Defense?</h5>
+    </div>
+    <div class="row">
+      <div class="center">
+        <div class="slider" data-id="defense" data-label="<b></b>" data-min="1" data-max="3"></div>
+      </div>
+    </div>
+  </div>
+
+
   <br>
-  <div class="right-checkbox">
-    <!-- FENDER  & LAUNCH PAD -->
-    <label for="fender" justify-content="center">Fender(1)</label>
-    <input type="checkbox" class="bool reset-bool resetable" id="fender" name="checkbox" value="fender" />
-    <label for="launch_pad" justify-content="center">Launchpad(2)</label>
-    <input type="checkbox" class="bool reset-bool resetable" id="launch_pad" name="checkbox" value="launch pad" />
-  </div>
-  <div class="right-checkbox">
-    <!-- TERMINAL & MID-FIELD -->
-    <label for="terminal" justify-content="center">Terminal(3)</label>
-    <input type="checkbox" class="bool reset-bool resetable" id="terminal" name="checkbox" value="terminal" />
-    <label for="mid_field" justify-content="center">Mid-field(4)</label>
-    <input type="checkbox" class="bool reset-bool resetable" id="mid_field" name="checkbox" value="mid_field" />
-  </div>
-  </div>
-  <!-- TELEOP DEFENSE??? -->
-  <div class="centered-checkbox">
-    <br>
-    <label for="endbutton" justify-content="left"><b>Did the robot...</b></label>
-    <br>
-    <label for="defense" justify-content="center">Play Defense </label>
-
-    <input type="checkbox" class="bool reset-bool resetable" id="defense" name="checkbox" value="tdefense" />
-    <label for="nodefense" justify-content="center">Get Defended </label>
-    <input type="checkbox" class="bool reset-bool resetable" id="nodefense" name="checkbox" value="tnodefense" />
-
-  </div>
-
-  <!-- WHERE THEY GET BALLS??? -->
-  <div class="centered-checkbox">
-    <br>
-    <label for="endbutton" justify-content="center"><b>Where did the robot collect balls?</b></label>
-    <h4>Only put where a robot significantly picks up from. Making one venture to the other side for one ball should not
-      count for G-OS since it didn't significantly pick up from that side.</h4>
-    <br>
-    <label for="hp" justify-content="center">Human Player</label> <!-- HUMAN PLAYER STATION? -->
-
-    <input type="checkbox" class="bool reset-bool resetable" id="hp" name="checkbox" value="hp" />
-    <label for="groundsame" justify-content="center">Ground - Alliance Side</label> <!-- GROUND? -->
-    <input type="checkbox" class="bool reset-bool resetable" id="groundsame" name="checkbox" value="groundsame" />
-    <label for="groundaway" justify-content="center">Ground - Opposing Side</label> <!-- GROUND? -->
-    <input type="checkbox" class="bool reset-bool resetable" id="groundaway" name="checkbox" value="groundaway" />
-  </div>
-
-
+  <br>
   <!-- EEEEEEEEEEENNNNNDGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAME -->
-  <div class="period-name">
-    <br>
-    <h1>Endgame</h1>
+  <div class="box_7">
+    <div class="period-name">
+      <h1>Endgame</h1>
+    </div>
+    <hr style="height: 5px;width: 600px;margin: auto;background-color: white;" />
   </div>
-  <hr style="height: 5px;width: 600px;margin: auto;background-color: rgb(40, 170, 51);" />
-  <label for="endbutton" justify-content="center"><b>Where did the Robot finish in ENDGAME?</b></label>
   <br>
 
-  <!-- CLIMBING BUTTONS -->
-  <input class="resetable endbutton" type="radio" name="avengersendgame" value="Didn't Climb"> Didn't Climb</input> <br>
-  <input class="resetable endbutton" type="radio" name="avengersendgame" value="Attempted or Failed"> Attempted or
-  Failed</input> <br>
-  <input class="resetable endbutton" type="radio" name="avengersendgame" value="Low Rung"> Low Rung</input> <br>
-  <input class="resetable endbutton" type="radio" name="avengersendgame" value="Mid Rung"> Mid Rung</input> <br>
-  <input class="resetable endbutton" type="radio" name="avengersendgame" value="High Rung"> High Rung</input> <br>
-  <input class="resetable endbutton" type="radio" name="avengersendgame" value="Traversal Rung"> Traversal Rung</input>
-  <br>
-
-  <!-- ENDGAME DEFENSE??? -->
-  <div class="centered-checkbox"> <br> <b>Did the robot...</b></label>
-    <br>
+  <div class="box_5">
+    <div class="box_8 center">
+      <h6>Where did the robot finish endgame?</h6>
+    </div>
+    <div class="row">
+      <div class="center">
+        <div class="toggle" data-id="dock2" data-label="Dock" style="--data-color-on: blue;"> </div>
+      </div>
+      <div class="center">
+        <div class="toggle" data-id="engage2" data-label="Engage" style="--data-color-on: green;"> </div>
+      </div>
+      <div class="center">
+        <div class="toggle" data-id="neither2" data-label="Neither" style="--data-color-on: red;"> </div>
+      </div>
+    </div>
   </div>
-  <div class="right-checkbox">
-    <label for="endgamedefense" justify-content="center">Play Defense </label>
-    <input type="checkbox" class="bool reset-bool resetable" id="endgamedefense" name="checkbox" value="edefense" />
-    <label style="color:rgb(244, 244, 244); font-size:20pt" for="nothing"> <b> hhhhhhh </b> </label>
-    <br>
-    <label for="continuetoscore" justify-content="center">Continue scoring </label>
-    <input type="checkbox" class="bool reset-bool resetable" id="continuetoscore" name="checkbox" value="score" />
-    <label style="color:rgb(244, 244, 244); font-size:20pt" for="nothing"> <b> hhhhhhh </b> </label>
-    <br>
-    <label for="botbroken" justify-content="center">Break/Not Show Up </label>
-    <input type="checkbox" class="bool reset-bool resetable" id="botbroken" name="checkbox" value="botbroken" />
-    <label style="color:rgb(244, 244, 244); font-size:20pt" for="nothing"> <b> hhhhhhh </b> </label>
-    <br>
+  <br>
+
+  <div class="box_5">
+    <div class="box_8 center">
+      <h4>Did the robot break?</h4>
+    </div>
+    <div class="row">
+      <div class="center">
+        <div class="toggle" data-id="yesbreak" data-label="Yes" style="--data-color-on: blue;"></div>
+      </div>
+      <div class="center">
+        <div class="toggle" data-id="nobreak" data-label="No" style="--data-color-on: red;"> </div>
+      </div>
+    </div>
   </div>
 
-  <br>
-  <label for="winlose" justify-content="center"><b>Did the robot win, lose, or tie?</b></label>
-  <br>
-
-  <!-- Win/Lose Buttons -->
-  <input class="resetable endbutton" type="radio" name="outcome" value="Win"> Win</input> <br>
-  <input class="resetable endbutton" type="radio" name="outcome" value="Lose"> Lose</input> <br>
-  <input class="resetable endbutton" type="radio" name="outcome" value="Tie"> Tie</input> <br>
 
   <!-- AMY'S COMMENT BOX -->
   <div>
     <br>
     <center>
-      <textarea rows="4" cols="35" name="comments" value="comments" id="comments" class="resetable"
-        placeholder="Comments about a robots gameplay go here! Write about a robots strengths and weaknesses. Were they fast? Did they only stick to one side of the field? Were they reckless in their driving? Did they have to spend time lining up their shot? Try and talk about things like these."></textarea>
+      <textarea rows="4" name="comments" value="comments" id="comments" class="resetable"
+        placeholder="This is a comment box"></textarea>
       <br>
     </center>
   </div>
@@ -194,9 +262,3 @@
   <div class="btn-primary" onclick="save()" align="center">Submit</div>
   <script src="filewriting.js"></script>
   <script src="script.js"></script>
-
-  <!-- RAPID REACT LOGO -->
-  <img src="rapidreact_logo.png" width="10000000" height="100" class="center" />
-</body>
-
-</html>

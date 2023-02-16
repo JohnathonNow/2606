@@ -26,13 +26,15 @@ function makeIncrementers(element) {
   element.appendChild(minus);
   //then we make a text box
   var input = document.createElement('input');
+  input.type = "number";
+  input.min = parseInt(element.attributes["data-min"].value);
+  input.max = parseInt(element.attributes["data-max"].value);
   //the text box initially says zero
   input.value = "0";
   //we give it a name and the id so we can talk about it
   input.name = id;
   input.id = id;
-  input.classList.add("fieldday");
-  input.classList.add("reset-number")
+  input.classList.add("fieldday", "reset-number", "resetable")
   //and we put it on the page
   element.appendChild(input);
   //then we add a plus button the same way as the minus
@@ -64,7 +66,7 @@ function makeSliders(element) {
   slider.setAttribute("max", datamax);
   slider.setAttribute("list", id + "_list");
 
-  slider.classList.add("sliderelement");
+  slider.classList.add("sliderelement", "resetable");
   slider.id = id;
   element.appendChild(slider);
 
@@ -83,17 +85,18 @@ function makeSliders(element) {
 function makeToggles(element) {
   var id = element.attributes["data-id"].value;
   var toggle = document.createElement('div');
-  toggle.classList.add("btn", "btn_toggle");
+  toggle.classList.add("btn", "btn_toggle", "resetable");
   toggle.onclick = function() { modifyToggle(id); };
   toggle.innerHTML = element.attributes["data-label"].value;
   toggle.id = id;
-  toggle.setAttribute("data-value", element.getAttribute("data-value") === "true");
+  toggle.setAttribute("value", element.getAttribute("value") === "true");
+  toggle.setAttribute("style", element.getAttribute("style"));
   element.appendChild(toggle);
 }
 function modifyToggle(element) {
   //given an id named element, we get that element on the page
   var inputBox = document.getElementById(element);
-  inputBox.setAttribute("data-value", !(inputBox.attributes["data-value"].value === "true"));
+  inputBox.setAttribute("value", !(inputBox.attributes["value"].value === "true"));
 }
 
 
@@ -128,6 +131,7 @@ function changeBoxes() {
     var element = textboxes[i];
     makeSliders(element);
   }
+  save_default_values();
 }
 
 function modifyIncrement(element, x) {
@@ -142,14 +146,16 @@ function modifyIncrement(element, x) {
   inputBox.value = parseInt(inputBox.value) + x;
   //now, to make sure the number is in between certain values
   //we can ask if it was too big or too small
-  if (inputBox.value < 0) {
+  let datamin = parseInt(inputBox.min);
+  let datamax = parseInt(inputBox.max);
+  if (inputBox.value < datamin) {
     //if it was too small, set it to some minumum value
-    inputBox.value = 0;
+    inputBox.value = datamin;
   } else {
     //otherwise, if it was too big
-    if (inputBox.value > 2607) {
+    if (inputBox.value > datamax) {
       //set it to some maximum value
-      inputBox.value = 2607;
+      inputBox.value = datamax;
     }
   }
 }
@@ -159,72 +165,61 @@ changeBoxes();
 var fileNumber = 0;
 
 function save_default_values() {
-    var resetables = document.getElementsByClassName("resetable");
-    for (var i = 0; i < resetables.length; i++) {
-        //we get the ith thing from the resetables array
-        var element = resetables[i];
-        element.setAttribute("value-reset", element.value);
+  var resetables = document.getElementsByClassName("resetable");
+  for (var i = 0; i < resetables.length; i++) {
+    //we get the ith thing from the resetables array
+    var element = resetables[i];
+    element.setAttribute("value-reset", element.value);
+    if (element.value == undefined) {
+      element.setAttribute("value-reset", element.attributes["value"].value);
     }
+  }
 }
 
 function save() {
-  //if (window.plugins != undefined && window.plugins.toast != undefined) {
-   
+  console.log("clicked submit");
+  var link = document.createElement('a');
+  fileNumber = fileNumber + 1;
+  var string = "";
+  let fields = document.querySelectorAll("input, .btn_toggle, textarea");
+  for (var i = 0; i < fields.length; i++) {
+    var value = fields[i].value;
+    if (fields[i].classList.contains("btn_toggle")) {
+      if (fields[i].attributes["value"].value == "true") {
+        value = 1;
+      } else {
+        value = 0;
+      }
+    }
+    if (fields[i].type == "checkbox") {
+      if (fields[i].checked == true) {
+        value = 1;
+      } else {
+        value = 0;
+      }
+    }
+    string += '"'+value.toString().replace('"', '""')+'",';
+    //string += '"'+fields[i].id.toString().replace('"', '""')+'",';
+  }
+  var tablet = document.getElementById('Tablet');
+  var k = tablet.value + 'data' + fileNumber + '.csv';
+  link.download = k;
+  var blob = new Blob([string], { type: 'text/plain' });
+  //if (window.plugins != undefined) {
   //}
-    console.log("clicked submit");
-
-    var matchnum = document.getElementById("matchnum");
-    var tablet = document.getElementById("tablet");
-    var whoami = document.getElementById("whoami");
-    var teamnum = document.getElementById("teamnum");
-    var auton_upper_hub_count = document.getElementById("auton-upper-hub-count");
-    var auton_lower_hub_count = document.getElementById("auton-lower-hub-count");
-    var teleop_upper_hub_count = document.getElementById("teleop-upper-hub-count");
-    var teleop_lower_hub_count = document.getElementById("teleop-lower-hub-count");
-    var wholeradio1 = document.getElementsByName("avengersendgame");
-    var wholeradio2 = document.getElementsByName("outcome");
-    var checkboxes = document.getElementsByName("checkbox");
-    for (let i of wholeradio1) {
-        if (i.checked) {
-            var avengersendgame = i.value
-        }
-    }
-    for (let i of wholeradio2) {
-        if (i.checked) {
-            var outcome = i.value
-        }
-    }
-    var comments = document.getElementById("comments");
-    console.log(comments.value)
-    var string = "" + matchnum.value + "," + tablet.value + "," + whoami.value + "," + teamnum.value + "," + auton_upper_hub_count.value + "," + auton_lower_hub_count.value + "," + teleop_upper_hub_count.value + "," + teleop_lower_hub_count.value + "," + avengersendgame + "," + outcome + ",\"" + (comments.value.replace(/\"/g, "\"\"").replace(/,/g, ";").replace(/\n/g, ";;  ")) + "\"";
-    for (let i of checkboxes) {
-        if (i.checked == true) {
-            i = 1;
-        } else {
-            i = 0;
-        }
-        string += "," + i;
-    }
-    var link = document.createElement('a');
-    fileNumber = fileNumber + 1;
-    var k = tablet.value + 'data' + fileNumber + '.csv';
-    link.download = k;
-    var blob = new Blob([string], {type: 'text/plain'});
-    //if (window.plugins != undefined) {
-    //}
-    link.href = window.URL.createObjectURL(blob);
-    link.click();
-    var matchnum = document.getElementById("matchnum");
-    matchnum.value = parseInt(matchnum.value) + 1;
-    var resetables = document.getElementsByClassName("resetable");
-    for (var i = 0; i < resetables.length; i++) {
-        //we get the ith thing from the resetables array
-        var element = resetables[i];
-        console.log(element.value + " , " + element.attributes["value-reset"].value)
-        element.value = element.attributes["value-reset"].value;
-    }
+  link.href = window.URL.createObjectURL(blob);
+  link.click();
+  var matchnum = document.getElementById("Match");
+  matchnum.value = parseInt(matchnum.value) + 1;
+  var resetables = document.getElementsByClassName("resetable");
+  for (var i = 0; i < resetables.length; i++) {
+    var element = resetables[i];
+    console.log(element.value + " , " + element.attributes["value-reset"].value)
+    element.value = element.attributes["value-reset"].value;
+    element.setAttribute("value", element.attributes["value-reset"].value);
+  }
   document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
   document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
   write(k, blob);
-  window.plugins.toast.showShortBottom("SUBMITTED WITH v22.03.10!");
+  window.plugins.toast.showShortBottom("SUBMITTED WITH v23.02.11!");
 }

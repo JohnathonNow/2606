@@ -1,13 +1,13 @@
 body {
   text-transform: uppercase;
-  font-size: 24pt;
-  color: rgb(40, 170, 51);
-  background-color: rgb(244, 244, 244);
+  font-size: 12pt;
+  color: rgb(255, 255, 255);
+  background-color: rgb(12, 12, 12);
 }
 
 html, body {margin: 0; height: 100%; overflow-x: hidden}
 
-div#bob {
+div.bob {
   background-color: blue;
 }
 
@@ -25,8 +25,8 @@ div#bob {
 .btn_increment {
   background-color: black;
   color: lightgray;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 1em;
   font-family: Consolas, monospace; 
   font-size: 76pt;
   text-align: center;
@@ -39,24 +39,40 @@ div#bob {
 .btn_toggle {
   font-family: Consolas, monospace; 
   font-size: 36pt;
-  text-align: center;
-  vertical-align: middle;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  /*text-align: right;
+  /*vertical-align: middle;
+  /*justify-content: center;
+  /*align-items: center;*/
+  width: 205px;
+  height: 66px;
+  border-radius: 20px;
 }
-.btn_toggle[data-value="true"] {
-  background-color: yellow;
+
+.big-toggle > .btn_toggle {
+  font-family: Consolas, monospace; 
+  font-size: 36pt;
+  width: 350px;
+  height: 66px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
 }
-.btn_toggle[data-value="false"] {
-  background-color: gray;
+
+.btn_toggle[value="true"] {
+  background-color: var(--data-color-on, yellow);
 }
+
+.btn_toggle[value="false"] {
+  background-color: var(--data-color-off, gray);
+}
+
 .toggle {
   text-align: center;
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
+
 
 .slider {
   text-align: center;
@@ -68,7 +84,7 @@ div#bob {
 .fieldday {
   font: Arial;
   font-size: 38pt;
-  width: 2em;
+  width: 1.5em;
   height: 2em;
   text-align: center;
   vertical-align: middle;
@@ -78,14 +94,14 @@ div#bob {
 }
 
 .incremental {
-      text-align: center;
+  text-align: center;
   vertical-align: middle;
   justify-content: center;
   align-items: center;
 }
 
 .period-name {
-  color: rgb(59, 155, 235);
+  color: rgb(255, 255, 255);
 }
 
 .bool {
@@ -102,16 +118,46 @@ h1 {
 
 h2 {
   font-size: 24pt;
-  color: rgb(40, 170, 51);
+  color: rgb(255, 255, 255);
   text-align: left;
   font-weight: bold;
+}
+
+h4 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  padding: 20px;
+}
+
+h5 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  padding: 1px;
+}
+
+h6 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  padding: 9px;
 }
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
+  width: auto;
 }
 
 .endbutton {
@@ -130,23 +176,30 @@ h2 {
   text-align: right;
 }
 
+.left-checkbox {
+  display: block;
+  text-align: left;
+}
+
 .float-container {
-    border: 3px solid #fff;
+    border: 3px solid .fff;
     padding: 20px;
+}
+
+.big-float-container {
+  overflow: hidden;
 }
 
 .float-child {
-    width: 40%;
-    float: left;
-    padding: 20px;
+  width: 40%;
+  float: center;
+  padding: 20px;
 }
-
 
 .column {
   float: left;
-  width: 50%;
+  width: 30%;
 }
-
 
 .row:after {
   content: "";
@@ -155,6 +208,102 @@ h2 {
 }
 
 textarea { word-break: break-all;
-   font: 10pt arial, helvetica, sans-serif;
-   padding: 5px;
+  font: 15pt arial, helvetica, sans-serif;
+  padding: 5px;
  }
+
+.box_1 {
+  float: left;
+  padding: 10px;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+}
+
+.box_2 {
+  float: center;
+  width: 302px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+}
+
+.box_3 {
+  float: center;
+  height: 540px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+}
+
+.box_4 {
+  float: right;
+  padding: 0%;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.box_5 {
+  float: center;
+  height: 206px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.box_6 {
+  float: center;
+  height: 65px;
+  width: 302px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+}
+
+.box_7 {
+  float: center;
+  height: 162px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  padding: 35px
+}
+
+.box_8 {
+  float: center;
+  width: 380px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 30px;
+}
+
+.box_9 {
+  height: 122px;
+  width: 523px;
+  background: rgba(255, 255, 255, 0.07);
+  opacity: 0.7;
+  border-radius: 30px;
+  float: left;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+#comments {
+  width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

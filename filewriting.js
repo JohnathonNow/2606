@@ -2,7 +2,7 @@ function writeFile(fileEntry, dataObj, isAppend) {
   // Create a FileWriter object for our FileEntry (log.txt).
   fileEntry.createWriter(function(fileWriter) {
     // If we are appending data to file, go to the end of the file.
-    if (isAppend) {
+    if (isAppend) {tarmac
       try {
         fileWriter.seek(fileWriter.length);
       }
