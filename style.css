@@ -25,7 +25,7 @@ div.bob {
 .btn_increment {
   background-color: black;
   color: lightgray;
-  width: 50px;
+  width: 80px;
   height: 1em;
   font-family: Consolas, monospace; 
   font-size: 76pt;
@@ -38,20 +38,20 @@ div.bob {
 
 .btn_toggle {
   font-family: Consolas, monospace; 
-  font-size: 28pt;
+  font-size: 36pt;
   /*text-align: right;
   /*vertical-align: middle;
   /*justify-content: center;
   /*align-items: center;*/
-  width: 155px;
+  width: 205px;
   height: 66px;
   border-radius: 20px;
 }
 
 .big-toggle > .btn_toggle {
   font-family: Consolas, monospace; 
-  font-size: 23pt;
-  width: 250px;
+  font-size: 36pt;
+  width: 350px;
   height: 66px;
   background: rgba(255, 255, 255, 0.09);
   border-radius: 20px;
@@ -79,10 +79,6 @@ div.bob {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
-}
-
-.sliderelement {
-  width: 500px;
 }
 
 .fieldday {
@@ -218,9 +214,8 @@ textarea { word-break: break-all;
 
 .box_1 {
   float: left;
-  padding: 0%;
-  width: 300px;
   padding: 10px;
+  width: 350px;
   height: 350px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 15px;
@@ -228,7 +223,7 @@ textarea { word-break: break-all;
 
 .box_2 {
   float: center;
-  width: 270px;
+  width: 302px;
   height: 120px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 30px;
@@ -244,7 +239,7 @@ textarea { word-break: break-all;
 .box_4 {
   float: right;
   padding: 0%;
-  width: 300px;
+  width: 350px;
   height: 350px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 15px;
@@ -253,7 +248,7 @@ textarea { word-break: break-all;
 
 .box_5 {
   float: center;
-  height: 162px;
+  height: 206px;
   background: rgba(255, 255, 255, 0.07);
   border-radius: 15px;
   padding: 10px;
