@@ -198,7 +198,7 @@ function save() {
         value = 0;
       }
     }
-    string += '"' + value.toString().replace('"', '""') + '",';
+    string += '"'+value.toString().replace('"', '""')+'",';
     //string += '"'+fields[i].id.toString().replace('"', '""')+'",';
   }
   var tablet = document.getElementById('Tablet');
@@ -221,5 +221,5 @@ function save() {
   document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
   document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
   write(k, blob);
-  window.plugins.toast.showShortBottom("SUBMITTED WITH v23.02.18!");
+  window.plugins.toast.showShortBottom("SUBMITTED WITH v23.02.11!");
 }
