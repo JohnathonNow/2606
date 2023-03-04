@@ -4,6 +4,8 @@ import glob
 import openpyxl
 import csv
 from openpyxl import load_workbook
+from openpyxl.chart import LineChart, PieChart, BarChart, Reference, Series
+from openpyxl.formatting.rule import ColorScaleRule
 NUM_MATCHES = 99
 SUM_COMMUNITY = 100
 SUM_NO_COMMUNITY = 101
@@ -40,9 +42,22 @@ def create_new_sheet(list_of_elem, sheet):
     writer = pd.ExcelWriter("./scouting_app_data_interface.xlsx", engine = 'openpyxl')
     writer.book = book
 
-    from openpyxl.chart import LineChart, PieChart, BarChart, Reference, Series
+
     sheets = {ws.title: ws for ws in book.worksheets}
     ws = sheets[sheet]
+    target = book.copy_worksheet(sheets['Summary'])
+    target.title = sheet + ' Summary'
+    target.cell(2, 1).value = sheet
+    
+   
+    rule = ColorScaleRule(start_type='percentile', start_value=10, start_color='FFAA0000',
+                       mid_type='percentile', mid_value=50, mid_color='FFAAAA00',
+                       end_type='percentile', end_value=90, end_color='FF00AA00')
+    target.conditional_formatting.add('C28:C31', rule)
+    target.conditional_formatting.add('E28:E30', rule)
+    target.conditional_formatting.add('G28:G30', rule)
+    target.conditional_formatting.add('H28:H28', rule)
+    target.conditional_formatting.add('H31:H31', rule)
     
     
     chart = LineChart()
