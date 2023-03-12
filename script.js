@@ -102,7 +102,7 @@ function modifyToggle(element) {
 
 
 function changeBoxes() {
-  console.log("I AM RUNNING");
+  alert("I AM RUNNING");
   //Get every single element on the page that has a property
   //that says class="incremental"
   var textboxes = document.getElementsByClassName("incremental");
@@ -198,7 +198,7 @@ function save() {
         value = 0;
       }
     }
-    string += '"'+value.toString().replace('"', '""')+'",';
+    string += '"' + value.toString().replace('"', '""') + '",';
     //string += '"'+fields[i].id.toString().replace('"', '""')+'",';
   }
   var tablet = document.getElementById('Tablet');
