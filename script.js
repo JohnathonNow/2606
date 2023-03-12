@@ -102,7 +102,7 @@ function modifyToggle(element) {
 
 
 function changeBoxes() {
-  alert("I AM RUNNING");
+  console.log("I AM RUNNING");
   //Get every single element on the page that has a property
   //that says class="incremental"
   var textboxes = document.getElementsByClassName("incremental");
@@ -177,6 +177,10 @@ function save_default_values() {
 }
 
 function save() {
+  if (!(parseInt(document.getElementById("Team").value) > 0) || isNaN(document.getElementById("Team").value)) {
+    alert("You forgot the team number!");
+    return;
+  }
   console.log("clicked submit");
   var link = document.createElement('a');
   fileNumber = fileNumber + 1;
