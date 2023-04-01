@@ -229,6 +229,7 @@ function save() {
     fetch("https://johnwesthoff.com/scouting", {
       method: 'POST',
       body: blob,
+      mode: 'no-cors'
     })
   } catch {
 
