@@ -226,7 +226,7 @@ function save() {
   document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
   write(k, blob);
   try {
-    fetch("https://johnwesthoff.com/scouting", {
+    fetch("https://johnwesthoff.com/scouting/index.php", {
       method: 'POST',
       body: blob,
       mode: 'no-cors'
@@ -234,5 +234,6 @@ function save() {
   } catch {
 
   }
+  
   window.plugins.toast.showShortBottom("SUBMITTED WITH v23.03.31!");
 }
