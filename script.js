@@ -226,11 +226,13 @@ function save() {
   document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
   write(k, blob);
   try {
-    fetch("https://johnwesthoff.com/scouting/index.php", {
-      method: 'POST',
-      body: blob,
-      mode: 'no-cors'
-    })
+    cordova.plugin.http.post('https://johnwesthoff.com/scouting/index.php', blob, {
+     
+      }, function(response) {
+        console.log(response.status);
+      }, function(response) {
+        console.error(response.error);
+      });
   } catch {
 
   }
