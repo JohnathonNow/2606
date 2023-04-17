@@ -224,7 +224,11 @@ function save() {
   }
   document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
   document.querySelectorAll('input[type=radio]:checked').forEach(el => el.checked = false);
-  write(k, blob);
+  try {
+    write(k, blob);
+  } catch {
+
+  }
   try {
     cordova.plugin.http.post('https://johnwesthoff.com/scouting/index.php', blob, {
      
