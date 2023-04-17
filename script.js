@@ -237,9 +237,9 @@ function save() {
       }, function(response) {
         console.error(response.error);
       });
-  } catch {
-
+  } catch(err) {
+      console.error(err);
   }
   
-  window.plugins.toast.showShortBottom("SUBMITTED WITH v23.03.31!");
+  window.plugins.toast.showShortBottom("SUBMITTED WITH v23.04.17!");
 }
