@@ -230,7 +230,7 @@ function save() {
 
   }
   try {
-    cordova.plugin.http.post('https://johnwesthoff.com/scouting/index.php', blob, {
+    cordova.plugin.http.post('https://johnwesthoff.com/scouting/index.php', string, {
      
       }, function(response) {
         console.log(response.status);
